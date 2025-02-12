@@ -18,7 +18,7 @@ def begin():
     now = datetime.now()
     wb, ws = openWorkbook()
     ws.append([now.date(), now.time(), variable.get()])
-    print("出勤", variable.get())
+    # print("出勤", variable.get())
     button_begin["state"] = tk.DISABLED
     button_finish["state"] = tk.NORMAL
     closeWorkbook(wb)    
@@ -29,7 +29,7 @@ def finish():
     max_row = ws.max_row
     ws.cell(max_row, 4).value = now.time()
     ws.cell(max_row, 5).value = variable.get()
-    print("退勤", variable.get())
+    # print("退勤", variable.get())
     button_begin["state"] = tk.NORMAL
     button_finish["state"] = tk.DISABLED
     closeWorkbook(wb)
